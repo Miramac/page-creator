@@ -1,0 +1,36 @@
+.row
+  .col-lg-6
+    form.form-horizontal#newPage(role='form')
+      .panel.panel-default
+        .panel-heading Page Infos
+        .panel-body
+          .form-group
+            label.col-sm-2.control-label(for='inputName') Name
+            .col-sm-8
+              input#inputName.form-control(type='text', placeholder='{{page.name}}', ng-model='page.name', required='required')
+      .panel.panel-default
+        .panel-heading Users
+        .panel-body
+          .form-group
+            label.col-sm-2.control-label(for='inputUser') User 1
+            .col-sm-8
+              input#inputUser.form-control(type='text', placeholder='User 1')
+          .form-group
+            label.col-sm-2.control-label(for='inputPassword') Password
+            .col-sm-8
+              input#inputPassword.form-control(type='text', placeholder='Password')
+              .checkbox
+                label Show Password
+                  input#showPassword(type='checkbox',checked='checked',disabled='disabled')
+      .form-group
+        .col-sm-offset-2.col-sm-8
+          button.btn.btn-primary(type='reset') Reset
+          | &nbsp;
+          button.btn.btn-primary(type='submit',disabled='disabled') Create
+
+  .col-lg-6
+    .panel.panel-default
+        .panel-heading Summary
+        .panel-body
+          p {{page.name}}
+          p {{page.path}}
