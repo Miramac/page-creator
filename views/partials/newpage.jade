@@ -7,7 +7,7 @@
           .form-group
             label.col-sm-2.control-label(for='inputName') Name
             .col-sm-8
-              input#inputName.form-control(type='text', placeholder='{{page.name}}', ng-model='page.name', required='required')
+              input#inputName.form-control(type='text', placeholder='{{page.name}}', ng-model='page.name', required='required', ng-change='change("page.name")')
       .panel.panel-default
         .panel-heading Users
         .panel-body
@@ -33,4 +33,4 @@
         .panel-heading Summary
         .panel-body
           p {{page.name}}
-          p {{page.path}}
+          p {{page.url}}

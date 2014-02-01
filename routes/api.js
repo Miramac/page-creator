@@ -7,7 +7,8 @@ exports.app = function (req, res) {
     name: 'Page Creator'
     , page: {
       name: 'New Page'
-      , path: 'new_page'
+      , path: ''
+      , url: ''
       , users: []
       , text01: ''
     }
