@@ -1,3 +1,5 @@
+.jumbotron  
+  h1 {{name}}
 .row
   .col-lg-6
     form.form-horizontal#newPage(role='form')
@@ -8,8 +10,21 @@
             label.col-sm-2.control-label(for='inputName') Name
             .col-sm-8
               input#inputName.form-control(type='text', placeholder='{{page.name}}', ng-model='page.name', required='required', ng-change='change("page.name")')
+          .form-group
+            label.col-sm-2.control-label(for='inputPath') Path
+            .col-sm-8
+              input#inputPath.form-control(type='text', ng-model='page.path', ng-change='change("page.path")')
+          .form-group
+            label.col-sm-2.control-label(for='inputUrl') Url
+            .col-sm-8
+              .input-group
+                input#inputUrl.form-control(type='text', ng-model='page.url', disabled='disabled')
+                span.input-group-btn
+                  button.btn.btn-default(type='button') Test
       .panel.panel-default
         .panel-heading Users
+          button.btn.btn-primary.pull-right.btn-xs
+            span.glyphicon.glyphicon-plus
         .panel-body
           .form-group
             label.col-sm-2.control-label(for='inputUser') User 1
@@ -26,7 +41,7 @@
         .col-sm-offset-2.col-sm-8
           button.btn.btn-primary(type='reset') Reset
           | &nbsp;
-          button.btn.btn-primary(type='submit',disabled='disabled') Create
+          button.btn.btn-primary(type='submit', ng-click='create()') Create
 
   .col-lg-6
     .panel.panel-default
